@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class ProWalksComponent {
 
+  RegionCode = "";
+
   constructor(public httpClient: HttpClient) {
 
   }
@@ -27,5 +29,16 @@ export class ProWalksComponent {
       this.RegionsList = data;
     });
   }
+
+  GetAllRegionID(){
+    console.log(this.RegionCode);
+    let getregionurlID = `https://localhost:7148/Regions/GetAllRegionsID/${this.RegionCode}`
+    this.httpClient.get(getregionurlID).subscribe((data: any) => {
+      this.RegionsList = data;
+      console.log(data);
+    });
+  }
+
+
 
 }
