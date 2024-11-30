@@ -43,21 +43,19 @@
 <hr>
 <input type="text" [(ngModel)] = "RegionCode"/>
 <button (click)="GetAllRegionID()">RegionID</button>
-
-
 <hr>
 
-<input type="text" placeholder="Code" [(ngModel)]="code" />
-<br>
-<input type="text" placeholder="Name" [(ngModel)]="name" />
-<br>
-<input type="text" placeholder="Area" [(ngModel)]="area" />
-<br>
-<input type="text" placeholder="Lat" [(ngModel)]="lat" />
-<br>
-<input type="text" placeholder="Long" [(ngModel)]="long" />
-<br>
-<input type="text" placeholder="Population" [(ngModel)]="population" />
-<br>
-<button (click)="Create()">Create</button>
+
+<input type="text" [(ngModel)]="Code" placeholder="Region Code" >
+<input type="text" [(ngModel)]="Name" placeholder="Region Name">
+<input type="text" [(ngModel)]="Lat" placeholder="Region Lat">
+<input type="text" [(ngModel)]="Long" placeholder="Region Long">
+<input type="text" [(ngModel)]="Area" placeholder="Region Area">
+<input type="text" [(ngModel)]="Population" placeholder="Region Population">
+
+<button (click)="CreateRegion()" >Create</button>
+
+
+
+
 

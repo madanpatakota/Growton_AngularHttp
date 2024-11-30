@@ -11,12 +11,22 @@ export class ProWalksComponent {
   RegionCode = "";
 
 
-  code = "";
-  name = "";
-  area = "";
-  lat = "";
-  long = "";
-  population = "";
+
+
+
+    Code = "";
+    Lat  = "";
+    Long = "";
+    Area = "";
+    Name = "";
+    Population = ""
+
+
+
+
+
+
+
 
 
   constructor(public httpClient: HttpClient) {
@@ -74,29 +84,29 @@ export class ProWalksComponent {
   // "population": 0
 
   //https://localhost:7148/Regions/CreateRegions
-  Create() {
-    //https://localhost:7148/Regions
-    let createURL = `https://localhost:7148/Regions/CreateRegions`;
-    this.httpClient.post(createURL, {
-      code: this.code, //code textbox value
-      name: this.name,
-      area: this.area,
-      lat: this.lat,
-      long: this.long,
-      population: this.population
-    }).subscribe((data: any) =>{
-        console.log(data);
-    });
+  
 
+  CreateRegion(){
+    // console.log(this.Code); //
+    // console.log(this.Population); //
+    // console.log(this.Lat); //
+    // console.log(this.Area);
+    // console.log(this.Long); //
+    // console.log(this.Name); // console.log(this.Code); //
+
+
+    this.httpClient.post("https://localhost:7148/Regions/CreateRegion",{
+      "code": this.Code,
+      "name": this.Name,
+      "area": this.Area,
+      "lat": this.Lat,
+      "long": this.Long,
+      "population": this.Population
+    }).subscribe(data=>{
+      console.log(data);// "Good"
+    })
 
   }
 
 }
 
-
-
-
-
-
-
-//Angular Forms  Template drive or reactive approach
